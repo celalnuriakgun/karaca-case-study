@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('celal');
+});
+
+Route::get('/elevator', function () {
+    return view('elevator');
 });

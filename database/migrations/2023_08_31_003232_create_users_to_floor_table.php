@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('elevators', function (Blueprint $table) {
+        Schema::create('users_to_floor', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->foreignId('user_id');
             $table->integer('floor');
-            $table->string('direction')->nullable();
-            $table->integer('target');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('elevators');
+        Schema::dropIfExists('users_to_floor');
     }
 };
